@@ -1,0 +1,14 @@
+.hero{
+	@include bg;
+	min-height: 500px;
+	&__content {
+			padding: 18rem 1rem;
+			width: 100%;
+		&-heading{
+			color: $white;
+			font-size: 3.5rem;
+			font-weight: 700;
+
+		}
+	}
+}

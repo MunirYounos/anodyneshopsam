@@ -1,0 +1,60 @@
+{% render 'hero' with {
+	settings: section.settings,
+	id: section.id
+} %}
+
+{% schema%}
+{
+	"name": "Hero",
+	"settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading",
+			"default": "New Heading"
+		},
+		{
+			"type": "text",
+			"id": "tradeMark",
+			"label": "Trade Mark",
+			"default": "tm"
+		},
+		{
+			"type": "textarea",
+			"id": "bodyText",
+			"label": "Hero body text",
+			"default": "Posture clothing are good for pain relief on different body areas like: head, back and shoulders."
+		},
+		{
+			"type": "url",
+			"id": "linkUrl",
+			"label": "Add link to the button"
+		},
+		
+		{
+			"type": "text",
+			"id": "btnText",
+			"label": "Add text to you button",
+			"default": "shop now"
+		},
+		{
+			"type": "image_picker",
+			"id": "sm_image",
+			"label": "Add an image for small devices",
+			"info": "Image dimensions: 991X1000"
+		},
+		{
+			"type": "image_picker",
+			"id": "lg_image",
+			"label": "Add an image for large devices",
+			"info": "Image dimensions: 1920X1080"
+		}
+	],
+	"presets": [
+		{
+			"name": "hero",
+			"category": "Image w/ text"
+		}
+	]
+}
+{% endschema%}

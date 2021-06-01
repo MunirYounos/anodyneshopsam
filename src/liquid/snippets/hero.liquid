@@ -1,0 +1,24 @@
+{% comment %}
+Requires following arguments:
+-settings
+{% endcomment%}
+<style>
+.hero--{{ id }} {
+	background-image: url({{ settings.sm_image | img_url: 'master'}});
+}
+@media(min-width: 992px){
+	.hero--{{ id }}{
+		background-image: url({{ settings.lg_image | img_url: 'master' }});
+	}
+}
+</style>
+
+<section class="hero hero--{{id}}">
+	<div class="container">
+			<div class="hero__content">
+				<h1 class="hero__content-heading">{{settings.heading}} <sup>{{settings.tradeMark }}</sup></h1>
+				<p class="hero__content-copy">{{ settings.bodyText}}</p>
+				<a href="{{settings.linkUrl }}" class="hero__content-btn btn__primary">{{ settings.btnText}}</a>
+			</div>
+	</div>
+</section>
