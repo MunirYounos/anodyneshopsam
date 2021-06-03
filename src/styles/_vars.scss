@@ -38,7 +38,7 @@ $ff2: 'Heebo', sans-serif;
 	position: relative;
 	cursor: pointer;
 	display: inline-block;
-	padding:1rem 3rem;
+	padding:1.3rem 3.6rem;
 	background: $color;
 	color: white;
 	text-decoration: none;
@@ -108,7 +108,7 @@ sup, sub{
 }
 
 .btn__primary {
-@include btn($primary-clr, $accent);
+@include btn($primary-clr, $dark-gray);
 }
 
 
