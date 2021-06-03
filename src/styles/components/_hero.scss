@@ -2,13 +2,52 @@
 	@include bg;
 	min-height: 500px;
 	&__content {
-			padding: 18rem 1rem;
+			* {
+				margin-bottom: 1rem;
+			}
+			padding: 14rem 1rem;
 			width: 100%;
+			text-align: center;
+			@include size(tablet){
+				width: 50%;
+				padding: 16rem 1rem;
+				text-align: left;
+			}
 		&-heading{
+			position: relative;
 			color: $white;
-			font-size: 3.5rem;
+			font-size: clamp(2rem, 4vw, 3.6rem);
+			text-transform: uppercase;
 			font-weight: 700;
+			@include size(tablet){
+				color: $dark-gray;
+			}
+			sup{
+				position: absolute;
+				top: 0;
+				font-size: 1.2rem;
+				right:2.4rem;
+				@include size(tablet){
+					right:0.5rem;
+				}
 
+			}
+		}
+		&-copy {
+			color: $white;
+			letter-spacing: 1px;
+			line-height: 1.5;
+			@include size(tablet){
+				color: $dark-gray;
+				}
+		}
+		&.center{
+			text-align: center;
+			width: 100%;
+			padding:10rem 0;
+			.hero__content-heading, .hero__content-copy {
+				color:white;
+			}
 		}
 	}
 }

@@ -1,0 +1,138 @@
+
+<div class="eee">
+  <div class="section-block">
+    <div class="services-wrapper dots-negative">
+      <div class="services-slider row" id="service-list-{{ section.id }}"
+           data-rows="{{section.settings.rows}}"
+           data-slidesToShow="{{section.blocks.size}}"
+           data-slidestoscroll="{{section.blocks.size}}"
+           data-arrows="{{ section.settings.arrows }}"
+           data-dots="{{ section.settings.dots }}" 
+           data-draggable="{{ section.settings.draggable }}" 
+           data-infinite="{{ section.settings.infinite }}" 
+           data-section-id="{{ section.id }}" 
+           data-section-type="slickCarousels">
+        {%- for block in section.blocks -%}
+        <div class="col services-item carousel__slide-wrapper--{{block.id}}" {{ block.shopify_attributes }}>
+          <div class="service-1 text-center px-lg-4">
+            <div class="mb-3 iconx4">
+              {{block.settings.icon | default:'[[ Icon ]]'}}
+            </div>
+            <div class="media-body pt-3">
+              <h5 class="mt-0 mb-3">{{block.settings.title}}</h5>
+              <div class="fz-n1 service-info">{{block.settings.description}}</div>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    
+    {%- if section.blocks.size == 0 -%}
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  .service-info{
+    line-height: 24px;
+  }
+
+  .services-wrapper{
+    padding-bottom:40px;
+    border-bottom:1px solid #eee;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Services",
+  "class": "index-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Service"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "HTML / Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Arrows",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "draggable",
+      "label": "Draggable",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "dots",
+      "label": "Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "infinite",
+      "label": "Infinite",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "Service heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "HTML / Description",
+          "default": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis."
+        },
+        {
+          "type": "textarea",
+          "id": "icon",
+          "label": "HTML image/icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Services",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "service"
+        },
+        {
+          "type": "service"
+        },
+        {
+          "type": "service"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
