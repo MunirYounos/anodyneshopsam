@@ -22,6 +22,7 @@
 		}
 	}
 	&-item{
+		position: relative;
 		display: block;
 		border: 1px solid rgba($secondary-clr, 0.1);
 		text-decoration: none;
@@ -29,13 +30,14 @@
 		background-color: $white;
 		transition: .3s ease-in transform;
 		 .content {
-			padding: 1.5rem 1rem;
+			padding: 2.5rem 1rem;
 			&-imagebox{
 				.img{
 					filter: grayscale(100%);
 				}
 			}
 			&-textbox{
+				padding: 1rem 0;
 				.title{
 					font-size: 0.9rem;
 					font-weight: 700;
@@ -61,6 +63,24 @@
 			transform: translateY(-8px);
 			.img{
 				filter: grayscale(0);
+			}
+			#arrow {
+				transform: rotate(0deg);
+				.arrow {
+					fill: $primary-clr;
+				}
+			}
+		}
+
+		#arrow{
+			position: absolute;
+			bottom: 1rem;
+			right: 1rem;
+			width: .65rem;
+			transform: rotate(45deg);
+			transition: transform .5s ease-in-out;
+			.arrow{
+				fill: $secondary-clr;
 			}
 		}
 	}

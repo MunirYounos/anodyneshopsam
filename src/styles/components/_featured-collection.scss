@@ -5,7 +5,6 @@
 		@include h2(2.4);
 	}
 	&-wrapper{
-		margin-bottom: 1rem;
 		@include size(tablet){
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
@@ -14,6 +13,9 @@
 	}
 	&-item{
 		position: relative;
+		@include size(phone){
+		margin-bottom: 1rem;
+		}
 		&:hover{
 
 			.collection-subtitle{

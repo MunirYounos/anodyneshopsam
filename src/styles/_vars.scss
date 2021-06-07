@@ -117,7 +117,8 @@ width: 100%;
 @mixin h2 ($size){
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: ($size / 0.8) + rem;
+	text-align: center;
+	font-size: ($size / 1.5) + rem;
 	margin: 2rem 0 1rem 0;
 	color: #444;
 	@include size(tablet){

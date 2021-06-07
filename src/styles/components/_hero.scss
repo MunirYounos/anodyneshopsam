@@ -51,9 +51,20 @@
 		&.center{
 			text-align: center;
 			width: 100%;
-			padding:10rem 0;
+			padding:8rem 0;
 			.hero__content-heading, .hero__content-copy {
 				color:white;
+			}
+		}
+		&-btn{
+			#arrow{
+				position: absolute;
+				top: .5rem;
+				right: .5rem;
+				width: .65rem;
+				.arrow{
+					fill: $white;
+				}
 			}
 		}
 	}
