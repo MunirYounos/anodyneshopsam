@@ -106,11 +106,24 @@ sup, sub{
 	font-size: .75rem;
 	height: 100%;
 }
-
+.text-center{
+text-align: center;
+display: block;
+width: 100%;
+}
 .btn__primary {
 @include btn($primary-clr, $dark-gray);
 }
-
+@mixin h2 ($size){
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: ($size / 0.8) + rem;
+	margin: 2rem 0 1rem 0;
+	color: #444;
+	@include size(tablet){
+	font-size: ($size * 1) + rem ;
+	}
+}
 
 
 
