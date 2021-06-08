@@ -123,6 +123,7 @@ width: 100%;
 	color: #444;
 	@include size(tablet){
 	font-size: ($size * 1) + rem ;
+	text-align: left;
 	}
 }
 
